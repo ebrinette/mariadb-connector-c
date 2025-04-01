@@ -726,7 +726,7 @@ my_context_spawn(struct my_context *c, void (*f)(void *), void *d)
      : [save] "r" (save)
      : "x3", "x4", "x5", "x6", "x7",
        "x9", "x10", "x11", "x14", "x15",
-#ifndef ANDROID
+#ifndef __ANDROID__
        "x18",
 #endif
        "x30",
@@ -833,7 +833,7 @@ my_context_continue(struct my_context *c)
      : [save] "r" (save)
      : "x1", "x2", "x3", "x4", "x5", "x6", "x7",
        "x9", "x10", "x11", "x12", "x13", "x14", "x15",
-#ifndef ANDROID
+#ifndef __ANDROID__
        "x18",
 #endif
        "x30",
@@ -914,7 +914,7 @@ my_context_yield(struct my_context *c)
      : [save] "r" (save)
      : "x0", "x1", "x2", "x3", "x4", "x5", "x6", "x7",
        "x9", "x10", "x11", "x12", "x13", "x14", "x15",
-#ifndef ANDROID
+#ifndef __ANDROID__
        "x18",
 #endif
        "x30",
